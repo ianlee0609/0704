@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "?seq\n\nseq(1, 9, by = 2)\nseq(1.575, 5.125, by = 0.05)\ngetwd()\n\ndt <- read.csv(file=\"exam.csv\")\n\n\ndt$Science\ndt[5,5]\nattach(dt)\n?attach\n\nScience <- Science*2.54\n\nfind(\"Science\")\nsummary(\"Science\")\ndetach(dt)\n\nLiterature\n\ndt[c(3,6),]\n\n?subset\n\nsubset(airquality, Temp > 80, select = c(Ozone, Temp))\n\nsubset(airquality, Temp > 80, select = c(Ozone, Temp))\nsubset(airquality, Day == 1, select = -Temp)\nsubset(airquality, select = Ozone:Wind)\n\nwith(airquality, subset(Ozone, Temp > 80))\n\n?order\n?sort\nii <- order(x <- c(1,1,3:1,1:4,3), y <- c(9,9:1), z <- c(2,1:9))\na <- seq(to=1,from=10)\na\nsort(a, partial = c(7, 10))\n\nmean(dt$Science)\nquantile(dt$Literature)\n\n\ndt\ntapply(dt$Literature, dt$Group, mean)\n\nmean(subset(dt,Science>50)$Science)\n\nsubset(dt,Science>50)\n\nt.test(dt$Science,alternative = 'l', mu=60)\n\n?t.test\n\nboxplot(Literature ~ Gender,dt,ylab='s',xlab=\"genfer\")\n\n\n\nfit.1 <- aov(Literature ~ Group, data = dt)\nfit.1\nsummary(fit.1) # Type I sum of square\nTukeyHSD(fit.1, \"Group\")\n\n\nfit.2 <- lm(Literature ~ Science, data = dt)\n\nfit.2\nsummary(fit.2)\nanova(fit.2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "created" : 1468209241447.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2840817311",
+    "id" : "758DDAC3",
+    "lastKnownWriteTime" : 1468211161,
+    "last_content_update" : 1468240941733,
+    "path" : "C:/Users/qoo/0711R/test.R",
+    "project_path" : "test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
