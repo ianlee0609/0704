@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "y=scan()\nlength(y)\nmean(y)\nmedian(y)\ny\nnames(sort(-table(y)))[1]\n\nsd(y)\nvar(y)\nsd(y)^2\n\n\nrange(y)[1]\n\nsd(y)/  length(y)^0.5\n\nsem <- function(k){\n  sd(k)/length(k)^0.5 -> result\n  \n  return(result)\n  \n}\nsem(y)\nlibrary(psych)\nskew(y)\nkurtosi(y)\nshapiro.test(y)\n\nlibrary(nortest)\ninstall.packages(\"nortest\")\nlillie.test(y)\n\nboxplot(y)\nhist(y)\n",
+    "created" : 1468312094379.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "982320024",
+    "id" : "60071F49",
+    "lastKnownWriteTime" : 1468311871,
+    "last_content_update" : 1468311871,
+    "path" : "~/0712/ch01_02.R",
+    "project_path" : "ch01_02.R",
+    "properties" : {
+        "docOutlineVisible" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

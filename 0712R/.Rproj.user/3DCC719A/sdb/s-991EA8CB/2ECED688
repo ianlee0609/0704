@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#單尾\n\nx <- scan()\n\nt.test(x,mu = 5)\nt.test(x,mu = 5)\n\nt.test(x,mu = 5,alternative = \"g\")\n\n?t.test\n\n#02配對樣本T檢定\n\nx1<- scan()\nx2<- scan()\n\n\n?t.test\n\nt.test(x1,x2,paired = TRUE,mu=-5,alternative = \"less\")\n\n\n#T檢定 變異數相等var.equal   配對paired=true  相差mu=  \n#單尾alternative = \"less\" 雙尾 預設\n\nt.test(x1,x2,alternative = \"less\")\n\nt.test(x1,x2,)\n\n\nt.test(x1,x2,var.equal = T,mu=-5)\n",
+    "created" : 1468311876459.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "453147634",
+    "id" : "2ECED688",
+    "lastKnownWriteTime" : 1468317176,
+    "last_content_update" : 1468317176374,
+    "path" : "~/0712/ch03_T檢定.R",
+    "project_path" : "ch03_T檢定.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
