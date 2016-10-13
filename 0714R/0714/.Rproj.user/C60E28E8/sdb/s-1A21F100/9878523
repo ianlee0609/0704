@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# 這是從 <http://data.gov.tw/node/7769> 下載的海盜通報資料\n# 由於這份文件並沒有遵循任何已知的常見格式\n# 所以我們必須要利用這章所學的技巧\n# 才能從中翠取出資訊\n# 首先，我們把該檔案載入到R 之中\npirate_path\n\npirate_info <- readLines(file(pirate_path, encoding = \"big-5\"))\npirate_info\n# 接著我們要把經緯度從這份資料中萃取出來\n# 這份資料的格式，基本上可以用`：`分割出資料的欄位與內容\n# 請同學利用`strsplit`將`pirate_info`做切割\n# 並把結果儲存到`pirate_info_key_value`之中\nstrsplit(pirate_info,\"：\")\npirate_info_key_value <- {\n  strsplit(pirate_info,\"：\")\n}\n\n# 我們需要的欄位名稱是「經緯度」\n# 請同學先把`pirate_info_key_value`中每個元素（這些元素均為字串向量）的第一個值取出\n# 你的答案鷹該要是字串向量\nsapply(pirate_info_key_value, \"[\", 1)\npirate_info_key <- {\n  # 請在這邊填寫你的程式碼\n  # 這個程式碼可以多行\n  sapply(pirate_info_key_value, \"[\", 1)\n}\n\n# 確保你的結果是字串向量，否則答案會出錯\nstopifnot(class(pirate_info_key) == \"character\")\n\n# 我們將`pirate_info_key`和`\"經緯度\"`做比較後，把結果存到變數`pirate_is_coordinate`\n# 結果應該為一個布林向量\npirate_info_key == pirate_info_key[8]\npirate_is_coordinate <- {\n  pirate_info_key == \"經緯度\"\n  \n}\n# 確保你的結果是布林向量，否則答案會出錯\nstopifnot(class(pirate_is_coordinate) == \"logical\")\n# 應該總共有11件海盜通報事件\nstopifnot(sum(pirate_is_coordinate) == 11)\n\n# 接著我們可以利用`pirate_is_coordinate`和`pirate_info_key_value`\n# 找出所有的經緯度資料\n# 請把這個資料存到變數`pirate_coordinate_raw`中，並且是個長度為11的字串向量\npirate_coordinate_raw <- {\n  tmp <-pirate_info_key_value[pirate_is_coordinate]\n  \n  sapply(tmp, \"[\",2)\n  \n}\n\nstopifnot(class(pirate_coordinate_raw) == \"character\")\nstopifnot(length(pirate_coordinate_raw) == 11)\n\n# 我們接著可以使用`substring`抓出經緯度的數字\n# 請先抓出緯度並忽略「分」的部份\n# 結果應該是整數（請用as.integer轉換）\n\npirate_coordinate_raw\npirate_coordinate_latitude <- {\n  as.integer( substr( pirate_coordinate_raw,3,4))\n  # 請在這邊填寫你的程式碼\n  # 這個程式碼可以多行\n}\n\nstopifnot(class(pirate_coordinate_latitude) == \"integer\")\nstopifnot(length(pirate_coordinate_latitude) == 11)\nstopifnot(sum(pirate_coordinate_latitude) == 43)\n\n# 請用同樣的要領取出經度並忽略「分」的部份\n# 結果同樣應該是整數\npirate_coordinate_longitude <- {\n  # 請在這邊填寫你的程式碼\n  # 這個程式碼可以多行\n  as.integer( substr( pirate_coordinate_raw,12,14))\n}\n\nstopifnot(class(pirate_coordinate_longitude) == \"integer\")\nstopifnot(length(pirate_coordinate_longitude) == 11)\nstopifnot(sum(pirate_coordinate_longitude) == 1151)\n\n\n# 為了方便後續的分析，我們常常把非結構化的資料整理為結構化資料。\n# 在R 中，結構化的資料結構就是data.frame\n# 請同學利用上述的數據，建立一個有11筆資料的data.frame\n# 其中有兩個欄位，一個是latitude, 另一個是longitude\n# 這兩個欄位紀錄著海盜事件的位置\n\npirate_df <- data.frame(\n  latitude = pirate_coordinate_latitude,\n  longitude = pirate_coordinate_longitude\n)\npirate_df$latitude\nstopifnot(is.data.frame(pirate_df))\nstopifnot(nrow(pirate_df) == 11)\nstopifnot(ncol(pirate_df) == 2)\nstopifnot(class(pirate_df$latitude) == \"integer\")\nstopifnot(class(pirate_df$longitude) == \"integer\")\nstopifnot(sum(pirate_df$latitude) == 43)\nstopifnot(sum(pirate_df$longitude) == 1151)\nsubmit()\n",
+    "created" : 1468466388699.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "356433487",
+    "id" : "9878523",
+    "lastKnownWriteTime" : 1468470593,
+    "last_content_update" : 1468470593379,
+    "path" : "C:/Users/Ian/AppData/Local/Temp/RtmpmsdeyG/RDataEngineer-01-HW.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

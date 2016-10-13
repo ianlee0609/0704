@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "a<- read.csv(\"CH04.csv\")\n\n\nsource(\"http://wush978.github.io/R/init-swirl.R\")\n\nsource(\"http://hjhsu.github.io/r_course/init-swirl.R\")\nswirl()\n?hist\n",
+    "created" : 1468412115451.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1700148280",
+    "id" : "1DA7E2A5",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1468461613918,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
